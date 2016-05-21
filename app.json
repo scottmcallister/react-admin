@@ -1,0 +1,13 @@
+{
+  "name": "React Admin",
+  "description": "An admin panel built with React, Bootstrap and Express",
+  "keywords": [
+    "react",
+    "es6",
+    "starter"
+  ],
+  "repository": "https://github.com/scottmcallister/react-admin",
+  "env": {
+    "PRODUCTION": "true"
+  }
+}
