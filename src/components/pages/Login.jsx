@@ -1,6 +1,9 @@
 import React from 'react';
 import Router from 'react-router';
 import {Panel, Input, Button} from 'react-bootstrap';
+var formStyle = {
+  marginTop: "60px"
+};
 
 var LoginPage = React.createClass({
 
@@ -13,17 +16,15 @@ var LoginPage = React.createClass({
   },
 
   mixins: [Router.Navigation],
-
   render: function(){
   
     return <div className="col-md-4 col-md-offset-4">
 
         <div className="text-center">
-          <h1 className="login-brand-text">SB Admin React</h1>
-          <h3 className="text-muted">Created by <a href="http://startreact.com">StartReact.com</a> team</h3>
+          <h1 className="login-brand-text">Social Commerce</h1>
         </div>
 
-        <Panel header={<h3>Please Sign In</h3>} className="login-panel">
+        <div style={ formStyle }>
 
           <form role="form" onSubmit={this.handleLogin}>
             <fieldset>
@@ -40,7 +41,7 @@ var LoginPage = React.createClass({
             </fieldset>
           </form>
 
-        </Panel>
+        </div>
         
       </div>
       

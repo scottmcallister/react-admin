@@ -3,22 +3,20 @@ import {NavDropdown, MenuItem, DropdownButton, Navbar, Nav, NavItem, Panel, Page
 
 import StatWidget from "../../../common/StatWidget.js";
 
-var Home = React.createClass({
+var Inbox = React.createClass({
 
   render: function() {
     return (
       <div>
-
         <div className="row">
           <div className="col-lg-12">
-            <PageHeader>Dashboard</PageHeader>
+            <PageHeader>Inbox</PageHeader>
           </div>
         </div>
-        
       </div>
     );
   }
 
 });
 
-export default Home;
+export default Inbox;

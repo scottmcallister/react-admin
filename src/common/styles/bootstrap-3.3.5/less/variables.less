@@ -7,12 +7,18 @@
 //
 //## Gray and brand colors for use across Bootstrap.
 
-@gray-base:              #000;
-@gray-darker:            lighten(@gray-base, 13.5%); // #222
+@gray-base:              #321442;
+@gray-darker:            #302573; // #222
 @gray-dark:              lighten(@gray-base, 20%);   // #333
 @gray:                   lighten(@gray-base, 33.5%); // #555
-@gray-light:             #4E5D6C;   // #999
+@gray-medium:            #7266e4;
+@gray-light:             #4637a6;   // #999
+@gray-bit-lighter:       #776bb3;
+@gray-super-light:       #af9eff;
 @gray-lighter:           #EBEBEB; // #eee
+@white:                  #FFFFFF;
+@black:                  #000000;
+
 
 @brand-primary:         #DF691A;
 @brand-success:         #5cb85c;
@@ -28,7 +34,7 @@
 //** Background color for `<body>`.
 @body-bg:               #2B3E50;
 //** Global text color on `<body>`.
-@text-color:            @gray-lighter;
+@text-color:            @white;
 
 //** Global textual link color.
 @link-color:            @gray-lighter;
@@ -103,7 +109,7 @@
 @line-height-small:         1.5;
 
 @border-radius-base:        0;
-@border-radius-large:       0;
+@border-radius-large:       30px;
 @border-radius-small:       0;
 
 //** Global color for active items (e.g., navs or dropdowns).
@@ -391,7 +397,7 @@
 //=== Inverted navbar
 // Reset inverted navbar basics
 @navbar-inverse-color:                      @text-color;
-@navbar-inverse-bg:                         @gray-dark;
+@navbar-inverse-bg:                         @gray-medium;
 @navbar-inverse-border:                     transparent;
 
 // Inverted navbar links

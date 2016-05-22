@@ -1,7 +1,7 @@
 import React, { PropTypes, Component } from 'react';
 import {PageHeader} from 'react-bootstrap';
 
-var Blank = React.createClass({
+var Settings = React.createClass({
 
   render: function() {
     return (
@@ -10,7 +10,7 @@ var Blank = React.createClass({
         <div className="container-fluid">
           <div className="row">
             <div className="col-lg-12">
-              <PageHeader>Blank</PageHeader>
+              <PageHeader>Settings</PageHeader>
             </div>
           </div>
         </div>
@@ -21,4 +21,4 @@ var Blank = React.createClass({
 
 });
 
-export default Blank;
+export default Settings;

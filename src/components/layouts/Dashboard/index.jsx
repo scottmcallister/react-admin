@@ -47,8 +47,8 @@ var HomePage = React.createClass({
     return (
         <div id="wrapper" className="content">
 
-          <Navbar inverse={true} brand={<span><img src={require('../../../common/img/logo.png')} alt="Start React" title="Start React" />
-            <span>&nbsp;React Admin</span>
+          <Navbar inverse={true} brand={<span>
+            <span>&nbsp;Social Commerce</span>
             <button type="button" className="navbar-toggle" onClick={this.toggleMenu} style={{position: 'absolute', right: 0, top: 0}}>
               <span className="sr-only">Toggle navigation</span>
               <span className="icon-bar"></span>
@@ -58,96 +58,6 @@ var HomePage = React.createClass({
             </span>} fluid={true}  style={ {margin: 0} }>
             <ul className="nav navbar-top-links navbar-right">
               <Nav style={ {margin: 0} }>
-                
-                <NavDropdown title=<i className="fa fa-envelope fa-fw"></i> >
-                  <MenuItem eventKey="1">
-                    <div> <strong>John Smith</strong> <span className="pull-right text-muted"> <em>Yesterday</em> </span> </div> 
-                    <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
-
-                  </MenuItem>
-                  <MenuItem divider />
-                  <MenuItem eventKey="2">
-                    <div> <strong>John Smith</strong> <span className="pull-right text-muted"> <em>Yesterday</em> </span> </div> 
-                    <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
-                  </MenuItem>
-                  <MenuItem divider />
-                  <MenuItem eventKey="3">
-                    <div> <strong>John Smith</strong> <span className="pull-right text-muted"> <em>Yesterday</em> </span> </div> 
-                    <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div> 
-                  </MenuItem>
-                  <MenuItem divider />
-                  <MenuItem eventKey="4">
-                    <strong>Read All Messages</strong> <i className="fa fa-angle-right"></i>
-                  </MenuItem>
-                </NavDropdown>
-
-                <NavDropdown title=<i className="fa fa-tasks fa-fw"></i> >
-                  <MenuItem eventKey="1" style={ {width: 300} }>
-                    <div> 
-                      <p> <strong>Task 1</strong> <span className="pull-right text-muted">40% Complete</span> </p> 
-                      <div>
-                        <ProgressBar active bsStyle="success" now={40} /> 
-                      </div> 
-                    </div>
-                  </MenuItem> 
-                  <MenuItem divider />
-                  <MenuItem eventKey="2">
-                    <div> 
-                      <p> <strong>Task 2</strong> <span className="pull-right text-muted">20% Complete</span> </p> 
-                      <div>
-                        <ProgressBar active bsStyle="info" now={20} />
-                      </div> 
-                    </div> 
-                  </MenuItem> 
-                  <MenuItem divider />
-                  <MenuItem eventKey="3">
-                    <div> 
-                      <p> <strong>Task 3</strong> <span className="pull-right text-muted">60% Complete</span> </p> 
-                      <div>
-                        <ProgressBar active bsStyle="warning" now={60} />
-                      </div> 
-                    </div> 
-                  </MenuItem> 
-                  <MenuItem divider />
-                  <MenuItem eventKey="4">
-                    <div> 
-                      <p> <strong>Task 4</strong> <span className="pull-right text-muted">80% Complete</span> </p> 
-                      <div>
-                        <ProgressBar active bsStyle="danger" now={80} />
-                      </div> 
-                    </div>
-                  </MenuItem> 
-                  <MenuItem divider />
-                  <MenuItem eventKey="5">
-                      <strong>See All Tasks</strong> <i className="fa fa-angle-right"></i>
-                  </MenuItem>
-                </NavDropdown>
-
-                <NavDropdown title=<i className="fa fa-bell fa-fw"></i> >
-                  <MenuItem eventKey="1" style={ {width: 300} }>
-                    <div> <i className="fa fa-comment fa-fw"></i> New Comment <span className="pull-right text-muted small">4 minutes ago</span> </div>
-                  </MenuItem> 
-                  <MenuItem divider />
-                  <MenuItem eventKey="2">
-                    <div> <i className="fa fa-twitter fa-fw"></i> 3 New Followers <span className="pull-right text-muted small">12 minutes ago</span> </div>
-                  </MenuItem> 
-                  <MenuItem divider />
-                  <MenuItem eventKey="3">
-                    <div> <i className="fa fa-envelope fa-fw"></i> Message Sent <span className="pull-right text-muted small">4 minutes ago</span> </div>
-                  </MenuItem> 
-                  <MenuItem divider />
-                  <MenuItem eventKey="4">
-                    <div> <i className="fa fa-tasks fa-fw"></i> New Task <span className="pull-right text-muted small">4 minutes ago</span> </div>
-                  </MenuItem> 
-                  <MenuItem divider />
-                  <MenuItem eventKey="5">
-                    <div> <i className="fa fa-upload fa-fw"></i> Server Rebooted <span className="pull-right text-muted small">4 minutes ago</span> </div>
-                  </MenuItem> 
-                  <MenuItem divider />
-                  <MenuItem eventKey="6">
-                    <strong>See All Alerts</strong> <i className="fa fa-angle-right"></i>
-                  </MenuItem>
-                </NavDropdown>
 
                 <NavDropdown title=<i className="fa fa-user fa-fw"></i> >
                   <MenuItem eventKey="1">
@@ -156,12 +66,6 @@ var HomePage = React.createClass({
                   <MenuItem eventKey="2">
                     <i className="fa fa-gear fa-fw"></i> Settings
                   </MenuItem> 
-                  <MenuItem eventKey="3">
-                    <a href="http://www.strapui.com/" onClick={ () => { window.location='http://www.strapui.com/'; } }>
-                      <i className="fa fa-eye fa-fw"></i> Premium React Themes
-                    </a>
-                  </MenuItem> 
-                  <MenuItem divider />
                   <MenuItem eventKey="4">
                     <Link to="login">
                       <i className="fa fa-sign-out fa-fw"></i> Logout
@@ -180,101 +84,33 @@ var HomePage = React.createClass({
                   </li>
                   
                   <li>
-                    <Link to="dashboard.home"><i className="fa fa-inbox fa-fw"></i> &nbsp;Inbox</Link>
+                    <Link to="dashboard.inbox"><i className="fa fa-inbox fa-fw"></i> &nbsp;Inbox</Link>
                   </li>
                         
                   <li className={classNames({'active': !this.state.chartsElementsCollapsed})}>
-                    <a href="javascript:void(0)" onClick={ () => { this.setState({chartsElementsCollapsed: !this.state.chartsElementsCollapsed}); return false; } }>
-                      <i className="fa fa-hashtag fa-fw"></i> &nbsp;Hashtags<span className="fa arrow"></span>
-                    </a>
-                    <ul className={classNames({'nav nav-second-level': true, 'collapse': this.state.chartsElementsCollapsed})}>
-                      <li>
-                        <Link to="dashboard.flot-charts">Flot Charts</Link>
-                      </li>
-                      <li>
-                        <Link to="dashboard.morrisjs-charts">Morris.js Charts</Link>
-                      </li>
-                    </ul>
+                    <Link to="dashboard.hashtags"><i className="fa fa-hashtag fa-fw"></i> &nbsp;Hashtags</Link>
                   </li>
               
                   <li> 
-                    <Link to="dashboard.tables"><i className="fa fa-thumbs-o-up fa-fw"></i> &nbsp;Curate</Link>
+                    <Link to="dashboard.curate"><i className="fa fa-thumbs-o-up fa-fw"></i> &nbsp;Curate</Link>
                   </li> 
               
                   <li> 
-                    <Link to="dashboard.forms"><i className="fa fa-users fa-fw"></i> Influencers</Link> 
+                    <Link to="dashboard.influencers"><i className="fa fa-users fa-fw"></i> Influencers</Link> 
                   </li>
                     
                   <li className={classNames({'active': !this.state.uiElementsCollapsed})}> 
-                    <a href="javascript:void(0)" onClick={ () => { this.setState({uiElementsCollapsed: !this.state.uiElementsCollapsed}); return false; } }><i className="fa fa-line-chart fa-fw"></i> Reporting<span className="fa arrow"></span></a> 
-
-                    <ul className={classNames({'nav nav-second-level': true, 'collapse': this.state.uiElementsCollapsed})}>
-                      <li>
-                        <Link to="dashboard.panels-wells">Panels and Wells</Link> 
-                      </li>
-                      <li>
-                        <Link to="dashboard.buttons">Buttons</Link> 
-                      </li>
-                      <li>
-                        <Link to="dashboard.notifications">Notifications</Link>
-                      </li>
-                      <li>
-                        <Link to="dashboard.typography">Typography</Link> 
-                      </li>
-                      <li>
-                        <Link to="dashboard.icons"> Icons</Link>
-                      </li>
-                      <li>
-                        <Link to="dashboard.grid">Grid</Link>
-                      </li>
-                    </ul>
+                    <Link to="dashboard.reporting"><i className="fa fa-line-chart fa-fw"></i> Reporting</Link> 
                   </li>
                     
                   <li className={classNames({'active': !this.state.multiLevelDropdownCollapsed})}>
-                    <a href="javascript:void(0)" onClick={ () => { this.setState({multiLevelDropdownCollapsed: !this.state.multiLevelDropdownCollapsed}); return false; } }>
-                      <i className="fa fa-puzzle-piece fa-fw"></i>&nbsp;Integrations<span className="fa arrow"></span>
-                    </a>
-                    <ul className={classNames({'nav nav-second-level': true, 'collapse': this.state.multiLevelDropdownCollapsed})}>
-                      <li>
-                        <a href="javascript:void(0)">Second Level Item</a>
-                      </li>
-                      <li>
-                        <a href="javascript:void(0)">Second Level Item</a>
-                      </li>
-                      <li className={classNames({'active': !this.state.thirdLevelDropdownCollapsed})}>
-                        <a href="javascript:void(0)" onClick={ () => { this.setState({thirdLevelDropdownCollapsed: !this.state.thirdLevelDropdownCollapsed}); return false; } }>
-                          Third Level<span className="fa arrow"></span>
-                        </a>
-                        <ul className={classNames({'nav nav-second-level': true, 'collapse': this.state.thirdLevelDropdownCollapsed})}>
-                          <li>
-                            <a href="javascript:void(0)">Third Level Item</a>
-                          </li>
-                          <li>
-                            <a href="javascript:void(0)">Third Level Item</a>
-                          </li>
-                          <li>
-                            <a href="javascript:void(0)">Third Level Item</a>
-                          </li>
-                          <li>
-                            <a href="javascript:void(0)">Third Level Item</a>
-                          </li>
-                        </ul>
-                      </li>
-                    </ul>
+                    <Link to="dashboard.integrations">
+                      <i className="fa fa-puzzle-piece fa-fw"></i>&nbsp;Integrations
+                    </Link>
                   </li> 
-                    
-                  <li className={classNames({'active': !this.state.samplePagesCollapsed})}>
-                    <a href="javascript:void(0)" onClick={ () => { this.setState({samplePagesCollapsed: !this.state.samplePagesCollapsed}); return false; } }>
-                      <i className="fa fa-gear fa-fw"></i>&nbsp;Settings<span className="fa arrow"></span>
-                    </a> 
-                    <ul className={classNames({'nav nav-second-level': true, 'collapse': this.state.samplePagesCollapsed})}>
-                      <li>
-                        <Link to="dashboard.blank">Blank Page</Link>
-                      </li>
-                      <li>
-                        <Link to="login">Login Page</Link>
-                      </li>
-                    </ul>
+                
+                  <li>
+                    <Link to="dashboard.settings"><i className="fa fa-gear fa-fw"></i>&nbsp;Settings</Link>
                   </li>
 
                 </ul>
