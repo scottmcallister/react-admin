@@ -1,7 +1,0 @@
-Inbox
-Hashtags
-Curate
-Influencers
-Reporting
-Integrations
-Settings
