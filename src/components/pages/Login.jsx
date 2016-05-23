@@ -35,12 +35,13 @@ var LoginPage = React.createClass({
               <div className="form-group">
                 <Input onChange={this.setPassword} className="form-control" placeholder="Password" ref="password" type="password" name="password" />
               </div>
-              <Input type="checkbox" label="Remember Me" />
               <Button type="submit" bsSize="large" bsStyle="success" block>Login</Button>
-              
+              <h3 className="text-center">or</h3>
+              <Button type="submit" bsSize="large" bsStyle="warning" block>
+                <i className="fa fa-instagram fa-fw"></i>Login with Instagram
+              </Button>
             </fieldset>
           </form>
-          <a href="/auth/instagram">Login with Instagram</a>
 
         </div>
         

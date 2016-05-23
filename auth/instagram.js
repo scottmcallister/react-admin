@@ -11,6 +11,8 @@ passport.use(new InstagramStrategy({
     callbackURL: config.instagram.callbackURL
   },
   function(token, tokenSecret, profile, done) {
+    
+    console.log(token);
 
     var searchQuery = {
       name: profile.displayName

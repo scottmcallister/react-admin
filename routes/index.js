@@ -9,8 +9,8 @@
 
 var express = require('express');
 var router = express.Router();
-
 var passportInstagram = require('../auth/instagram');
+var rp = require('request-promise');
 
 
 // Serve application file depending on environment
@@ -35,17 +35,43 @@ router.get('/', function(req, res, next) {
   res.render('login', { title: 'Social Commerce' });
 });
 
+router.get('/dashboard', function(req, res, next){
+   res.render('index');
+});
+
 router.get('/login', function(req, res, next) {
   res.send('Go back and register!');
 });
+
+router.get('/tagsearch', function(req, res, next){
+  var options = {
+      uri: 'https://api.instagram.com/v1/tags/beingacreeper/media/recent?access_token=3257756654.5b700cc.021118ff09794540bc5909d5c61345a9',
+      /*qs: {
+          access_token: 'xxxxx xxxxx' // 
+      },*/
+      headers: {
+          'User-Agent': 'Request-Promise'
+      },
+      json: true // Automatically parses the JSON string in the response 
+  };
+  
+  rp(options)
+      .then(function (data) {
+          res.json(data);
+      })
+      .catch(function (err) {
+          // API call failed... 
+          console.log("FAILURE");
+    });
+})
   
 router.get('/auth/instagram', passportInstagram.authenticate('instagram'));
 
 router.get('/auth/instagram/callback',
-  passportInstagram.authenticate('instagram', { failureRedirect: '/login' }),
+  passportInstagram.authenticate('instagram', { failureRedirect: '/' }),
   function(req, res) {
     // Successful authentication
-    res.json(req.user);
+    res.redirect('/dashboard');
   });
 
 module.exports = router;
