@@ -40,6 +40,7 @@ var LoginPage = React.createClass({
               
             </fieldset>
           </form>
+          <a href="/auth/instagram">Login with Instagram</a>
 
         </div>
         

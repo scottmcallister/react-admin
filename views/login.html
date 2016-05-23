@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="app.js"></script>
+        <title>Social Commerce</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="col-md-4 col-md-offset-4">
+
+                <div class="text-center">
+                <h1 class="login-brand-text">Social Commerce</h1>
+                </div>
+
+                <div style="padding-top:40px;">
+
+                <form role="form" method="GET" action="/auth/instagram">
+                    <fieldset>
+                    <div class="form-group">
+                        <input class="form-control" placeholder="Username" ref="loginID" type="text" autofocus="" name="name" />
+                    </div>
+
+                    <div class="form-group">
+                        <input class="form-control" placeholder="Password" ref="password" type="password" name="password" />
+                    </div>
+                    <input type="submit" class="btn btn-lg btn-success form-control" value="Login"/>
+                </form>
+                <h3 class="text-center">or</h3>
+                <a href="/auth/instagram" class="btn btn-lg btn-warning form-control">
+                    <i class="fa fa-instagram fa-fw"></i>Login with Instagram
+                </a>
+                
+
+                </div>
+                
+            </div>
+        </div>
+    </body>
+</html>
