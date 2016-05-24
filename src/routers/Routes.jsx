@@ -22,9 +22,9 @@ var Routes = React.createClass({
       return (
           <Route name="base" path="/" handler={BaseLayout}>
             <Route name="dashboard" path="/dashboard" handler={DashboardLayout}>
+              <Route name="dashboard.hashtags" path="/hashtags" handler={DashboardHashtags} />
               <Route name="dashboard.home" path="/home" handler={DashboardHomePage} />
               <Route name="dashboard.inbox" path="/inbox" handler={DashboardInbox} />
-              <Route name="dashboard.hashtags" path="/hashtags" handler={DashboardHashtags} />
               <Route name="dashboard.curate" path="/curate" handler={DashboardCurate} />
               <Route name="dashboard.influencers" path="/influencers" handler={DashboardInfluencers} />
               <Route name="dashboard.reporting" path="/reporting" handler={DashboardReporting} />
@@ -35,7 +35,7 @@ var Routes = React.createClass({
             <Route name="login" path="/login" handler={LoginPage} />
             <Route name="logout" path="/logout" handler={LogoutPage} />
             <DefaultRoute name="default" handler={DashboardLayout} />
-            <Redirect from="/" to="dashboard.home" />
+            <Redirect from="/" to="dashboard.hashtags" />
           </Route>
       );
     }

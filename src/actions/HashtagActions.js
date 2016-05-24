@@ -14,9 +14,9 @@ export function searchByTag(hashtag){
         text: hashtag
     });
     $.ajax({
-        url: "/tagsearch",
-        success: function (data, textStatus, jqXHR) {
-            dispatcher.dispatch({type: "TAG_SEARCH_RETURNED", hashtag: hashtag, state: "ready", data: data});
+        url: "/tagsearch?q="+hashtag,
+        success: function (results, textStatus, jqXHR) {
+            dispatcher.dispatch({type: "TAG_SEARCH_RETURNED", hashtag: hashtag, state: "ready", data: results.data});
         }
     });
 }

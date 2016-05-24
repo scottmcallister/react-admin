@@ -1,7 +1,7 @@
 var ids = {
   instagram: {
-    clientID: '5b700cc6e8fb4e2bbb1d547d31315ad9',
-    clientSecret: '8ef759855cd84bdcad19a5e0e0a05543',
+    clientID: 'ef5a593d5a364f42befd4eb709f0f0d6',
+    clientSecret: '1aef3905d5d14547a8a779a4fa5a0155',
     callbackURL: "http://127.0.0.1:8080/auth/instagram/callback"
   }
 };

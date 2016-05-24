@@ -6,6 +6,7 @@ var config = require('../_config');
 var init = require('./init');
 
 passport.use(new InstagramStrategy({
+    scope: ['comments', 'relationships', 'public_content'],
     clientID: config.instagram.clientID,
     clientSecret: config.instagram.clientSecret,
     callbackURL: config.instagram.callbackURL
@@ -20,7 +21,8 @@ passport.use(new InstagramStrategy({
 
     var updates = {
       name: profile.displayName,
-      someID: profile.id
+      someID: profile.id,
+      token: token
     };
 
     var options = {

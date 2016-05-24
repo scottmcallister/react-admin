@@ -44,8 +44,10 @@ router.get('/login', function(req, res, next) {
 });
 
 router.get('/tagsearch', function(req, res, next){
+  var text = req.query.q;
+  var token = req.session.user.token;
   var options = {
-      uri: 'https://api.instagram.com/v1/tags/beingacreeper/media/recent?access_token=3257756654.5b700cc.021118ff09794540bc5909d5c61345a9',
+      uri: 'https://api.instagram.com/v1/tags/'+text+'/media/recent?access_token='+token,
       /*qs: {
           access_token: 'xxxxx xxxxx' // 
       },*/
@@ -62,6 +64,10 @@ router.get('/tagsearch', function(req, res, next){
       .catch(function (err) {
           // API call failed... 
           console.log("FAILURE");
+          console.log(req.session);
+          console.log("token: " + token);
+          console.log(text);
+          console.log(options);
     });
 })
   
@@ -71,6 +77,7 @@ router.get('/auth/instagram/callback',
   passportInstagram.authenticate('instagram', { failureRedirect: '/' }),
   function(req, res) {
     // Successful authentication
+    req.session.user = req.user;
     res.redirect('/dashboard');
   });
 

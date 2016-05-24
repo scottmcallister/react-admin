@@ -4,19 +4,22 @@ import {NavDropdown, MenuItem, DropdownButton, Navbar, Nav, NavItem, Panel, Page
 import StatWidget from "../../../common/StatWidget.js";
 import * as HashtagActions from "../../../../actions/HashtagActions.js";
 import HashtagStore from "../../../../stores/HashtagStore.js";
+import Card from "./Card";
 
 export default class Hashtags extends React.Component{
   
   constructor(){
     super();
     this.state = {
-      hashtags: HashtagStore.getAll()
+        query: '',
+        hashtags: HashtagStore.getAll()
     };
   }
   
   componentWillMount(){
     HashtagStore.on("change", () =>{
       this.setState({
+        query: '',
         hashtags: HashtagStore.getAll()
       });
     });
@@ -27,7 +30,13 @@ export default class Hashtags extends React.Component{
   }
   
   searchByTag(){
-    HashtagActions.searchByTag("beingacreeper");
+    HashtagActions.searchByTag(this.state.query);
+  }
+  
+  handleInput(e){
+    this.setState({ 
+      query: e.target.value
+    });
   }
 
   render() {
@@ -35,7 +44,7 @@ export default class Hashtags extends React.Component{
     const { hashtags } = this.state;
     
     const HashtagList = hashtags.map((item) => {
-      return <li>#{item.hashtag}</li>;
+      return <Card id={item.id} text={item.text} image={item.image} username={item.username}/>;
     });
     
     return (
@@ -44,7 +53,10 @@ export default class Hashtags extends React.Component{
           <div className="col-lg-12">
             <PageHeader>Hashtags</PageHeader>
           </div>
-          <button addClass="btn btn-default" onClick={this.searchByTag.bind(this)}>Create</button>
+          <div className="col-lg-6 col-lg-offset-3 text-center form-group">
+              <input className="form-control" type="text" value={this.state.query} onChange={this.handleInput.bind(this)} />
+              <button className="btn btn-primary form-control" onClick={this.searchByTag.bind(this)}>Search</button>
+          </div>
           <ul>
             { HashtagList }
           </ul>

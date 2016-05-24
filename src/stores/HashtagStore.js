@@ -5,23 +5,26 @@ import dispatcher from "../dispatcher.js";
 class HashtagStore extends EventEmitter{
     constructor(){
         super();
-        this.hashtags = [
-            {
-                id: 312098310,
-                hashtag: "helloworld"
-            }
-        ];
+        this.hashtags = [{}];
     }
     
     getAll(){
         return this.hashtags;
     }
     
-    createHashtag(text){
-        this.hashtags.push({
-           id: Date.now(),
-           hashtag: text 
+    createHashtags(data){
+        
+        data.forEach((item) =>{
+            if(item.type == "image"){
+                this.hashtags.push({
+                    id: Date.now(),
+                    text: item.caption.text, 
+                    image: item.images.low_resolution.url,
+                    username: item.user.username 
+                });
+            }
         });
+        
         this.emit("change");
     }
     
@@ -31,7 +34,7 @@ class HashtagStore extends EventEmitter{
                 this.createHashtag(action.text)
             }   
             case "TAG_SEARCH_RETURNED": {
-                this.createHashtag(action.data.meta.code);
+                this.createHashtags(action.data);
             }
         }
     }
